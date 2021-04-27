@@ -32,6 +32,12 @@ const pipeline = [
     }
   },
   {
+    $addFields: { id: '$_id' }
+  },
+  {
+    $project: { _id: 0 }
+  },
+  {
     $unset: [
       '__v',
       'userWord._id',
